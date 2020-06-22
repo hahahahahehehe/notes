@@ -276,7 +276,7 @@ UserDao.xml
 **resultType是必须的，不然mybatis查询完成之后不知道将数据封装到哪里**
 
 ```xml
-?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -603,6 +603,60 @@ public class Resources {
         </dependency>
     </dependencies>
 ```
+
+
+
+创建Mapper类存放sql语句和返回类型
+
+```JAVA
+package com.custom.bean;
+
+/**
+ * @ClassName: Mapper
+ * @author: Administrator
+ * @date: 2020/6/8 13:03
+ * @Description
+ */
+public class Mapper {
+
+    private String queryString;
+    private String resultType;
+
+    public Mapper() {
+    }
+
+    public Mapper(String queryString, String resultType) {
+        this.queryString = queryString;
+        this.resultType = resultType;
+    }
+
+    public String getQueryString() {
+        return queryString;
+    }
+
+    public void setQueryString(String queryString) {
+        this.queryString = queryString;
+    }
+
+    public String getResultType() {
+        return resultType;
+    }
+
+    public void setResultType(String resultType) {
+        this.resultType = resultType;
+    }
+
+    @Override
+    public String toString() {
+        return "Mapper{" +
+                "queryString='" + queryString + '\'' +
+                ", resultType='" + resultType + '\'' +
+                '}';
+    }
+}
+```
+
+
 
 
 
